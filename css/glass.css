@@ -1,0 +1,233 @@
+/**
+ * Quiet Liquid Glass Components
+ * Recreated with high fidelity from FloatingNavBar.kt, GlassSurface.kt, and Vocabulary.html
+ */
+
+/* Core Floating Glass Surface */
+.glass-surface {
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 0 var(--glass-highlight), var(--glass-shadow);
+  border-radius: var(--radius-lg);
+  transition: background-color var(--transition-base),
+              border-color var(--transition-base),
+              box-shadow var(--transition-base),
+              transform var(--transition-fast);
+}
+
+/* Glass Pill (Buttons, Tags, Tabs) */
+.glass-pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(18px) saturate(1.6);
+  -webkit-backdrop-filter: blur(18px) saturate(1.6);
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 0 var(--glass-highlight), var(--glass-shadow-sm);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transition: transform var(--transition-fast),
+              background-color var(--transition-base),
+              border-color var(--transition-base),
+              color var(--transition-base);
+}
+
+.glass-pill:hover {
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-border-strong);
+  color: var(--color-text-primary);
+}
+
+.glass-pill:active {
+  transform: scale(0.96);
+}
+
+/* High-Contrast Primary CTA Button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  background: var(--color-text-primary);
+  color: var(--color-text-inverse);
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+}
+
+.btn-primary:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+/* Electric Blue Accent Button */
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 8px 20px -4px rgba(36, 87, 214, 0.3);
+  cursor: pointer;
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.btn-accent:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+
+.btn-accent:active {
+  transform: scale(0.97);
+}
+
+/* Secondary Subtle Glass Button */
+.btn-glass {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 12px 22px;
+  border-radius: var(--radius-full);
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(18px) saturate(1.6);
+  -webkit-backdrop-filter: blur(18px) saturate(1.6);
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 0 var(--glass-highlight), var(--glass-shadow-sm);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform var(--transition-fast), background-color var(--transition-base), border-color var(--transition-base);
+}
+
+.btn-glass:hover {
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-border-strong);
+}
+
+.btn-glass:active {
+  transform: scale(0.97);
+}
+
+/* =========================================================
+   FLOATING GLASS DOCK (From FloatingNavBar.kt & Vocabulary.html)
+   ========================================================= */
+.floating-glass-dock {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(24px) saturate(1.8);
+  -webkit-backdrop-filter: blur(24px) saturate(1.8);
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 0 var(--glass-highlight), var(--glass-shadow);
+}
+
+/* Ambient bottom light pool under dock */
+.floating-glass-dock::before {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--dock-light-pool);
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.dock-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  color: var(--color-text-tertiary);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: width 0.4s var(--ease-spring),
+              color var(--transition-fast),
+              background-color var(--transition-fast),
+              transform var(--transition-fast);
+  overflow: hidden;
+}
+
+.dock-item svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.dock-item .dock-label {
+  display: none;
+  margin-left: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.dock-item:hover {
+  color: var(--color-text-primary);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dock-item.active {
+  width: 96px;
+  color: var(--color-text-primary);
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  box-shadow: inset 0 1px 0 var(--glass-highlight);
+}
+
+.dock-item.active .dock-label {
+  display: inline-block;
+}
+
+.dock-item.active svg {
+  transform: scale(1.08);
+  color: var(--color-accent);
+}
+

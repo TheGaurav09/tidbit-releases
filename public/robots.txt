@@ -1,0 +1,32 @@
+# TidBit Web & AI Search Crawler Directives
+# https://github.com/TheGaurav09/tidbit-releases
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Specialized AI Answer Engine Crawlers (AEO)
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: ClaudeBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Sitemap reference
+Sitemap: https://TheGaurav09.github.io/tidbit-releases/sitemap.xml
+

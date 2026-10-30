@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Rounded Base Canvas -->
+  <rect width="512" height="512" rx="128" fill="#101317"/>
+  
+  <!-- Subtle Ambient Glow -->
+  <circle cx="360" cy="150" r="140" fill="#2457D6" opacity="0.35" filter="blur(40px)"/>
+  
+  <!-- Brand Blue Digital Bit -->
+  <rect x="290" y="110" width="100" height="100" rx="24" fill="#2457D6"/>
+  
+  <!-- Ink Stem 'T' and dotless 'i' elements stylized -->
+  <path d="M140 180H260V228H218V380H162V228H140V180Z" fill="#FFFFFF"/>
+  <rect x="290" y="240" width="56" height="140" rx="16" fill="#FFFFFF"/>
+</svg>
+

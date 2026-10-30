@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#0B132B" />
+      <stop offset="50%" stopColor="#101827" />
+      <stop offset="100%" stopColor="#030712" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#60A5FA" />
+      <stop offset="100%" stopColor="#2457D6" />
+    </linearGradient>
+    <radialGradient id="glow" cx="80%" cy="20%" r="50%">
+      <stop offset="0%" stopColor="#2457D6" stopOpacity="0.35" />
+      <stop offset="100%" stopColor="#2457D6" stopOpacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glow)" />
+
+  <!-- Release Pill Badge -->
+  <g transform="translate(100, 100)">
+    <rect width="360" height="42" rx="21" fill="rgba(36, 87, 214, 0.2)" stroke="rgba(96, 165, 250, 0.4)" stroke-width="1.5" />
+    <circle cx="22" cy="21" r="5" fill="#10B981" />
+    <text x="38" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#93C5FD">
+      TidBit v2.0 · Verified Android Release
+    </text>
+  </g>
+
+  <!-- Main Headline -->
+  <text x="100" y="220" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="64" font-weight="900" fill="#FFFFFF" letter-spacing="-0.03em">
+    The <tspan fill="#60A5FA">Antidote</tspan> to Brainrot.
+  </text>
+  <text x="100" y="300" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="52" font-weight="800" fill="#E2E8F0" letter-spacing="-0.02em">
+    Bite-Sized Learning That Sticks.
+  </text>
+
+  <!-- Subtitle -->
+  <text x="100" y="375" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="400" fill="#94A3B8">
+    60s Educational Video Reels · Bud AI Real-Time Tutor · BookNest Audiobooks
+  </text>
+  <text x="100" y="415" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="400" fill="#94A3B8">
+    100% Distraction-Free with Zero Advertisements.
+  </text>
+
+  <!-- Feature Tags -->
+  <g transform="translate(100, 480)">
+    <rect x="0" y="0" width="180" height="44" rx="22" fill="#1E293B" stroke="#334155" stroke-width="1" />
+    <text x="90" y="27" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="600" fill="#F8FAFC" text-anchor="middle">Zero Ad Trackers</text>
+
+    <rect x="200" y="0" width="180" height="44" rx="22" fill="#1E293B" stroke="#334155" stroke-width="1" />
+    <text x="290" y="27" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="600" fill="#F8FAFC" text-anchor="middle">Bud AI Active Recall</text>
+
+    <rect x="400" y="0" width="180" height="44" rx="22" fill="#1E293B" stroke="#334155" stroke-width="1" />
+    <text x="490" y="27" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="600" fill="#F8FAFC" text-anchor="middle">Offline BookNest</text>
+
+    <rect x="600" y="0" width="180" height="44" rx="22" fill="#1E293B" stroke="#334155" stroke-width="1" />
+    <text x="690" y="27" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="600" fill="#F8FAFC" text-anchor="middle">Encrypted Storage</text>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(1000, 95)">
+    <rect x="0" y="0" width="100" height="100" rx="24" fill="#2457D6" />
+    <rect x="36" y="26" width="28" height="28" rx="6" fill="#FFFFFF" />
+    <rect x="36" y="60" width="28" height="16" rx="4" fill="#FFFFFF" />
+  </g>
+</svg>
+

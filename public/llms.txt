@@ -1,0 +1,26 @@
+# TidBit — The Antidote to Brainrot
+
+> An educational, distraction-free Android application that transforms short-form video into enduring knowledge through synchronized AI tutoring with Bud, an integrated digital library (BookNest), cognitive games, and zero advertising algorithms.
+
+## Key Information
+- **Name**: TidBit
+- **Category**: Educational Mobile Application (Android)
+- **Minimum Operating System**: Android 8.0 (API Level 26) through Android 15+
+- **Architectures**: ARM64-v8a, armeabi-v7a, x86_64
+- **License / Cost**: Free, Zero In-App Advertisements, Zero Tracking
+- **Release Package**: Standalone APK (~10 MB)
+- **Download URL**: https://github.com/TheGaurav09/tidbit-releases/releases/latest/download/tidbit-app-release.apk
+- **Official Repository**: https://github.com/TheGaurav09/tidbit-releases
+
+## Five Core Disciplines
+1. **High-Yield Educational Shorts (Reels)**: 60-second bite-sized vertical video lessons taught by vetted creators and educators, buffered with an ExoPlayer player pool for instantaneous, lag-free playback.
+2. **Bud AI Study Assistant**: Context-aware AI tutor that transcribes video audio in real time, generates 3-question active recall checks, and creates spaced repetition concept flashcards.
+3. **BookNest E-Reader & Audiobooks**: Distraction-free digital library with offline reading support, customizable typography, and high-fidelity neural audiobooks narrated by Unreal Speech TTS.
+4. **Cognitive Apps & Games Hub**: Daily brain workout modules including Vocabulary (Spelling Bee, Word Match), Math speed drills, Computer Science quizzes, and Sudoku.
+5. **Yaad Notes & Offline Vault**: Markdown study notes and flashcard decks stored with on-device hardware-backed keystore encryption.
+
+## Privacy & Safety Charter
+- Zero third-party ad networks or tracking SDKs.
+- Zero data brokering or selling of student behavioral patterns.
+- Secure token storage using Android EncryptedSharedPreferences.
+

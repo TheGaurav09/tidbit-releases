@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+@layer base {
+  :root,
+  html {
+    color-scheme: light;
+    --color-canvas: #FAFBFC;
+    --color-surface: #FFFFFF;
+    --color-surface-hover: #F1F4F8;
+    --color-border: rgba(0, 0, 0, 0.08);
+    --color-border-strong: rgba(0, 0, 0, 0.15);
+    --color-text-primary: #0F172A;
+    --color-text-secondary: #475569;
+    --color-text-tertiary: #64748B;
+    --color-accent: #2457D6;
+    --color-accent-soft: rgba(36, 87, 214, 0.08);
+    --color-success: #16A34A;
+    --glass-bg: rgba(255, 255, 255, 0.88);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    --glass-highlight: rgba(255, 255, 255, 0.95);
+    --card-visual-bg: #F4F6F9;
+    --card-visual-border: rgba(0, 0, 0, 0.06);
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* Glass Surface Utility */
+.glass-surface {
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 0 var(--glass-highlight), 0 8px 24px -4px rgba(0, 0, 0, 0.05);
+}
+
+/* Glass Pill Utility */
+.glass-pill {
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(16px) saturate(1.6);
+  -webkit-backdrop-filter: blur(16px) saturate(1.6);
+  border: 1px solid var(--glass-border);
+}
+
+/* Subtle Animated Mesh Background for Depth */
+.mesh-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(at 15% 15%, rgba(36, 87, 214, 0.04) 0px, transparent 50%),
+    radial-gradient(at 85% 85%, rgba(22, 163, 74, 0.03) 0px, transparent 50%);
+  z-index: 0;
+}
+
+/* No visible scrollbar helper */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Moving Border Beam Animation for Pill Buttons */
+@keyframes border-beam {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
+
+@keyframes border-beam-reverse {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 100;
+  }
+}
+
+.animate-border-beam {
+  animation: border-beam 3.5s linear infinite;
+}
+
+.animate-border-beam-reverse {
+  animation: border-beam-reverse 3.5s linear infinite;
+}
