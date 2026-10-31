@@ -28,7 +28,7 @@ To verify the authenticity of your downloaded APK against tampering:
 ```powershell
 Get-FileHash -Algorithm SHA256 tidbit-app-release.apk
 ```
-*Expected SHA-256 for v2.0.7:* `db2908474c07986884a26a1eec61d1de4f45a33b23c0ef07c5b56fedf9adc1be`
+*Expected SHA-256 for v2.0.9:* `326ae1c226a03914e254e10347b5afd2e8fb0adc415dcf30ac284283b7309531`
 
 **Linux / macOS:**
 ```bash
