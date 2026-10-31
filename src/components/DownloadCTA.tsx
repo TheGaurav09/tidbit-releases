@@ -1,5 +1,5 @@
 import React from "react";
-import { HoverBorderGradient } from "./ui/hover-border-gradient";
+import { Button } from "./ui/moving-border";
 import { APP_CONFIG } from "../lib/config";
 import { triggerDirectDownload } from "../lib/download";
 
@@ -16,9 +16,6 @@ export function DownloadCTA({
   return (
     <section className="py-16 md:py-24 px-4 max-w-4xl mx-auto" id="download">
       <div className="rounded-3xl p-6 sm:p-12 text-center bg-white border border-black/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.04)] flex flex-col items-center">
-        <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
-          Ready to Learn
-        </span>
         <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900 mt-2 mb-3 font-display">
           Start Your Distraction-Free Journey
         </h2>
@@ -26,13 +23,14 @@ export function DownloadCTA({
           Download verified TidBit release APK directly or join our Google Play Store beta waitlist for worldwide access.
         </p>
 
-        {/* Buttons: Automatic Direct Download without page redirection */}
+        {/* Buttons: Automatic Direct Download with TidBit Brand Moving Border Button */}
         <div className="flex items-center justify-center gap-3.5 flex-wrap mb-6">
-          <HoverBorderGradient
+          <Button
             as="button"
             onClick={handleDownloadClick}
-            containerClassName="rounded-full shadow-md"
-            className="text-sm md:text-base font-semibold flex items-center gap-2.5 py-3 px-6 cursor-pointer"
+            borderRadius="9999px"
+            containerClassName="h-12 w-auto shadow-md"
+            className="bg-neutral-900 hover:bg-neutral-800 text-white text-sm md:text-base font-semibold flex items-center gap-2.5 px-6 cursor-pointer transition-colors"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -40,11 +38,11 @@ export function DownloadCTA({
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
             <span>Download TidBit APK ({APP_CONFIG.apkSize})</span>
-          </HoverBorderGradient>
+          </Button>
 
           <button
             onClick={onOpenWaitlist}
-            className="px-6 py-3 rounded-full bg-neutral-100 border border-neutral-200 text-neutral-800 text-sm font-semibold hover:bg-neutral-200/80 transition-colors cursor-pointer"
+            className="h-12 px-6 rounded-full bg-neutral-100 border border-neutral-200 text-neutral-800 text-sm md:text-base font-semibold hover:bg-neutral-200/80 transition-colors cursor-pointer flex items-center justify-center"
           >
             Play Store Beta
           </button>

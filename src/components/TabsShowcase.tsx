@@ -79,7 +79,7 @@ export function TabsShowcase() {
         </div>
 
         <div className="w-full md:w-auto flex justify-center shrink-0">
-          <PhoneMockup screen={mod.id} />
+          <PhoneMockup screen={mod.id} className="max-w-[220px] md:max-w-[240px]" />
         </div>
       </div>
     ),
@@ -87,13 +87,13 @@ export function TabsShowcase() {
 
   return (
     <div className="w-full max-w-5xl mx-auto">
-      {/* DESKTOP VIEW: Aceternity UI Tabs with side-by-side modules */}
-      <div className="hidden md:flex h-[44rem] [perspective:1000px] relative flex-col w-full items-start justify-start">
+      {/* DESKTOP VIEW: Aceternity UI Tabs with side-by-side modules (compact mobile mockup) */}
+      <div className="hidden md:flex h-[36rem] [perspective:1000px] relative flex-col w-full items-start justify-start">
         <Tabs tabs={desktopTabs} />
       </div>
 
-      {/* MOBILE VIEW: Stacked Tactile Phone Deck (Cards stack as user scrolls, zero tab overflow) */}
-      <div className="md:hidden flex flex-col gap-10 px-3 relative">
+      {/* MOBILE VIEW: Stacked Tactile Phone Deck (Clean card stack, zero shadow compounding) */}
+      <div className="md:hidden flex flex-col gap-8 px-3 relative pb-12">
         {modules.map((mod, idx) => (
           <motion.div
             key={mod.id}
@@ -101,19 +101,26 @@ export function TabsShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="sticky top-20 flex flex-col items-center"
-            style={{ zIndex: idx + 10 }}
+            className="sticky flex flex-col items-center"
+            style={{
+              top: `${68 + idx * 8}px`,
+              zIndex: idx + 10,
+            }}
           >
-            {/* Elegant Floating Step Badge */}
-            <div className="mb-3.5 px-3.5 py-1 rounded-full bg-white/95 backdrop-blur-md border border-black/[0.09] shadow-sm text-xs font-semibold text-neutral-800 flex items-center gap-2">
-              <span className="font-mono text-blue-600 font-bold text-[11px]">0{idx + 1}</span>
-              <span className="w-1 h-1 rounded-full bg-neutral-300" />
-              <span>{mod.title}</span>
-            </div>
+            <div className="w-full max-w-[310px] rounded-3xl bg-white border border-black/[0.08] p-4 sm:p-5 shadow-[0_10px_30px_-6px_rgba(0,0,0,0.08)] flex flex-col items-center transition-all">
+              {/* Floating Step Badge */}
 
-            {/* Hardware Phone Card with realistic bottom shadow */}
-            <div className="w-full max-w-[280px] sm:max-w-[300px] filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.18)]">
-              <PhoneMockup screen={mod.id} />
+              <h4 className="text-base font-bold text-neutral-900 text-center mb-1 font-display leading-snug">
+                {mod.headline}
+              </h4>
+              <p className="text-xs text-neutral-500 text-center mb-4 line-clamp-2 leading-relaxed">
+                {mod.description}
+              </p>
+
+              {/* Hardware Phone Card with clean hardware shadow */}
+              <div className="w-full max-w-[205px] sm:max-w-[220px]">
+                <PhoneMockup screen={mod.id} />
+              </div>
             </div>
           </motion.div>
         ))}

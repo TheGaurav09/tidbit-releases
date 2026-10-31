@@ -138,12 +138,26 @@ function brevoDevMiddleware(env) {
   };
 }
 
+function copyIndexTo404() {
+  return {
+    name: 'copy-index-to-404',
+    closeBundle() {
+      const distDir = path.resolve(__dirname, 'dist');
+      const indexPath = path.resolve(distDir, 'index.html');
+      const notFoundPath = path.resolve(distDir, '404.html');
+      if (fs.existsSync(indexPath)) {
+        fs.copyFileSync(indexPath, notFoundPath);
+      }
+    },
+  };
+}
+
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
 
   return {
     base: process.env.VITE_BASE_PATH || './',
-    plugins: [react(), tailwindcss(), brevoDevMiddleware(env)],
+    plugins: [react(), tailwindcss(), brevoDevMiddleware(env), copyIndexTo404()],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './src'),

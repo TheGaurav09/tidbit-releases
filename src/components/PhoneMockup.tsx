@@ -1,4 +1,5 @@
 import React from "react";
+import { assetUrl } from "@/lib/utils";
 
 export type ScreenType = "shorts" | "bud" | "books" | "apps" | "notes";
 
@@ -9,23 +10,23 @@ interface PhoneMockupProps {
 
 const screenImageMap: Record<ScreenType, { src: string; alt: string }> = {
   shorts: {
-    src: "/images/screen-shorts.jpg",
+    src: assetUrl("/images/screen-shorts.jpg"),
     alt: "TidBit Shorts Feed - Curated lesson and active learning reel",
   },
   bud: {
-    src: "/images/screen-bud.jpg",
+    src: assetUrl("/images/screen-bud.jpg"),
     alt: "TidBit Bud AI Tutor - Context-aware interactive concept check",
   },
   books: {
-    src: "/images/screen-books.jpg",
+    src: assetUrl("/images/screen-books.jpg"),
     alt: "TidBit BookNest - E-Reader with neural audiobook narration",
   },
   apps: {
-    src: "/images/screen-apps.jpg",
+    src: assetUrl("/images/screen-apps.jpg"),
     alt: "TidBit Vocab Arena - Spelling Bee, Wordle and brain workouts",
   },
   notes: {
-    src: "/images/screen-notes.jpg",
+    src: assetUrl("/images/screen-notes.jpg"),
     alt: "TidBit Yaad Notes - Modular notebook for doodles and audio memos",
   },
 };
