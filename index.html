@@ -61,7 +61,7 @@
     "operatingSystem": "Android 8.0+",
     "applicationCategory": "EducationalApplication",
     "description": "An educational, distraction-free social and micro-learning platform for Android. Combines short-form educational reels with context-aware AI tutoring by Bud, classical literature e-reading, and neural audiobooks.",
-    "softwareVersion": "v2.0.9",
+    "softwareVersion": "v2.1.0",
     "fileSize": "10 MB",
     "fileFormat": "application/vnd.android.package-archive",
     "downloadUrl": "https://github.com/TheGaurav09/tidbit-releases/releases/latest/download/tidbit-app-release.apk",
@@ -166,6 +166,22 @@
     "url": "https://TheGaurav09.github.io/tidbit-releases/",
     "description": "The Antidote to Brainrot | Distraction-Free Educational Micro-Learning"
   }
+  </script>
+  <!-- Universal Deep Link Auto-Routing -->
+  <script>
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const postId = params.get('post') || params.get('p');
+      const reelId = params.get('reel') || params.get('r');
+      const profileId = params.get('profile') || params.get('u');
+      if (postId) {
+        window.location.href = "tidbit://post/" + encodeURIComponent(postId);
+      } else if (reelId) {
+        window.location.href = "tidbit://reel/" + encodeURIComponent(reelId);
+      } else if (profileId) {
+        window.location.href = "tidbit://profile/" + encodeURIComponent(profileId);
+      }
+    })();
   </script>
 </head>
 <body class="bg-[var(--color-canvas)] text-[var(--color-text-primary)] antialiased">

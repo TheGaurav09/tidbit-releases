@@ -128,7 +128,7 @@ function brevoDevMiddleware(env) {
         const stat = fs.statSync(apkPath);
         res.writeHead(200, {
           'Content-Type': 'application/vnd.android.package-archive',
-          'Content-Disposition': 'attachment; filename="tidbit-v2.0.9.apk"',
+          'Content-Disposition': 'attachment; filename="tidbit-v2.1.0.apk"',
           'Content-Length': stat.size,
         });
 

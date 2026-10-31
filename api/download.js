@@ -9,7 +9,7 @@ export default function handler(req, res) {
     'https://github.com/TheGaurav09/tidbit-releases/releases/latest/download/tidbit-app-release.apk';
 
   // Instruct browser to download directly as an attachment without page navigation
-  res.setHeader('Content-Disposition', 'attachment; filename="tidbit-v2.0.9.apk"');
+  res.setHeader('Content-Disposition', 'attachment; filename="tidbit-v2.1.0.apk"');
   res.setHeader('Content-Type', 'application/vnd.android.package-archive');
   return res.redirect(302, downloadUrl);
 }

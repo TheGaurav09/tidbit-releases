@@ -22,7 +22,7 @@ TidBit requires Android 8.0 (API Level 26) or higher. Supported architectures in
 ## 3. Verified Release Specifications
 - **App Name**: TidBit
 - **Package ID**: com.example.tidbit
-- **Version**: v2.0.9
+- **Version**: v2.1.0
 - **Latest Release APK**: https://github.com/TheGaurav09/tidbit-releases/releases/latest/download/tidbit-app-release.apk
 - **Official GitHub Releases**: https://github.com/TheGaurav09/tidbit-releases/releases
 - **Developer / Publisher**: TheGaurav09
