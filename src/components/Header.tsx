@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "./ui/moving-border";
+import { HoverBorderGradient } from "./ui/hover-border-gradient";
 import { TidBitLogo } from "./TidBitLogo";
 import { APP_CONFIG } from "../lib/config";
 import { triggerDirectDownload } from "../lib/download";
@@ -35,17 +35,16 @@ export function Header({
           </a>
         </nav>
 
-        {/* Actions - Moving Border Button with TidBit Brand UI Gradient */}
+        {/* Actions */}
         <div className="flex items-center gap-3">
-          <Button
+          <HoverBorderGradient
             as="button"
             onClick={handleGetAppClick}
-            borderRadius="9999px"
-            containerClassName="h-9 w-auto shadow-xs"
-            className="bg-neutral-900 hover:bg-neutral-800 text-white font-semibold text-xs md:text-sm px-4 gap-2 cursor-pointer transition-colors"
+            containerClassName="rounded-full shadow-sm"
+            className="text-xs md:text-sm font-semibold flex items-center gap-2 py-1.5 px-4 cursor-pointer"
           >
             <span>Get App</span>
-          </Button>
+          </HoverBorderGradient>
         </div>
       </div>
     </header>

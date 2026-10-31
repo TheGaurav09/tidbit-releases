@@ -5,7 +5,7 @@
  * or navigating away from the current page.
  */
 
-export function triggerDirectDownload(url: string, filename = "tidbit-v2.0.7.apk") {
+export function triggerDirectDownload(url: string, filename = "tidbit-v2.0.9.apk") {
   const link = document.createElement("a");
   link.href = url;
   link.setAttribute("download", filename);

@@ -84,7 +84,7 @@ export default async function handler(req, res) {
               <p style="font-size: 13px; color: #64748B; margin: 6px 0 0 0;">We roll out access in batches. You'll receive your direct Play Store invite link shortly.</p>
             </div>
             <p style="font-size: 13px; color: #94A3B8; margin-top: 32px; border-top: 1px solid #E2E8F0; padding-top: 16px;">
-              © 2026 Tidbit · Pure Focus
+              © 2026 TidBit Ecosystem · Zero Ad Trackers · Pure Focus
             </p>
           </div>
         `,

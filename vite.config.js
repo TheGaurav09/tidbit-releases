@@ -91,7 +91,7 @@ function brevoDevMiddleware(env) {
                       <p style="font-size: 13px; color: #64748B; margin: 6px 0 0 0;">We roll out access in batches. You'll receive your direct Play Store invite link shortly.</p>
                     </div>
                     <p style="font-size: 13px; color: #94A3B8; margin-top: 32px; border-top: 1px solid #E2E8F0; padding-top: 16px;">
-                      © 2026 Tidbit · Pure Focus
+                      © 2026 TidBit Ecosystem · Zero Ad Trackers · Pure Focus
                     </p>
                   </div>
                 `,
@@ -128,7 +128,7 @@ function brevoDevMiddleware(env) {
         const stat = fs.statSync(apkPath);
         res.writeHead(200, {
           'Content-Type': 'application/vnd.android.package-archive',
-          'Content-Disposition': 'attachment; filename="tidbit-v2.0.7.apk"',
+          'Content-Disposition': 'attachment; filename="tidbit-v2.0.9.apk"',
           'Content-Length': stat.size,
         });
 
@@ -138,26 +138,12 @@ function brevoDevMiddleware(env) {
   };
 }
 
-function copyIndexTo404() {
-  return {
-    name: 'copy-index-to-404',
-    closeBundle() {
-      const distDir = path.resolve(__dirname, 'dist');
-      const indexPath = path.resolve(distDir, 'index.html');
-      const notFoundPath = path.resolve(distDir, '404.html');
-      if (fs.existsSync(indexPath)) {
-        fs.copyFileSync(indexPath, notFoundPath);
-      }
-    },
-  };
-}
-
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
 
   return {
     base: process.env.VITE_BASE_PATH || './',
-    plugins: [react(), tailwindcss(), brevoDevMiddleware(env), copyIndexTo404()],
+    plugins: [react(), tailwindcss(), brevoDevMiddleware(env)],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './src'),

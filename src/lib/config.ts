@@ -5,7 +5,7 @@
 export const APP_CONFIG = {
   name: "TidBit",
   tagline: "The Antidote to Brainrot | Distraction-Free Micro-Learning",
-  version: "v2.0.7",
+  version: "v2.0.9",
   apkSize: "10 MB",
   minAndroidVersion: "Android 8.0 (API level 26)+",
   supportedArchitectures: "ARM64-v8a, armeabi-v7a, x86_64",
@@ -25,5 +25,5 @@ export const APP_CONFIG = {
   
   // Security Verification
   sha256VerificationText: "SHA-256 Checksum Verified",
-  sha256Hash: "db2908474c07986884a26a1eec61d1de4f45a33b23c0ef07c5b56fedf9adc1be",
+  sha256Hash: "326AE1C226A03914E254E10347B5AFD2E8FB0ADC415DCF30AC284283B7309531",
 };
