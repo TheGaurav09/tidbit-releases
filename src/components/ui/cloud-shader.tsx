@@ -344,7 +344,10 @@ export const CloudShader = ({
 
     const success = initGL();
     if (!success) {
-      // Graceful fallback: canvas stays opacity 0, container gradient displays perfectly
+      if (canvas) {
+        canvas.style.opacity = "0";
+        canvas.style.display = "none";
+      }
       return;
     }
 
@@ -416,11 +419,15 @@ export const CloudShader = ({
       e.preventDefault();
       running = false;
       cancelAnimationFrame(frame);
-      if (canvas) canvas.style.opacity = "0";
+      if (canvas) {
+        canvas.style.opacity = "0";
+        canvas.style.display = "none";
+      }
     };
 
     // Context restored handler: re-initializes WebGL once browser restores resources
     const handleContextRestored = () => {
+      if (canvas) canvas.style.display = "block";
       running = true;
       if (initGL()) {
         resize();
@@ -473,11 +480,17 @@ export const CloudShader = ({
       window.removeEventListener("focus", handleVisibility);
       resizeObserver.disconnect();
       visibilityObserver.disconnect();
-      if (gl && !gl.isContextLost()) {
-        if (buffer) gl.deleteBuffer(buffer);
-        if (program) gl.deleteProgram(program);
-        if (vert) gl.deleteShader(vert);
-        if (frag) gl.deleteShader(frag);
+      if (gl) {
+        if (!gl.isContextLost()) {
+          if (buffer) gl.deleteBuffer(buffer);
+          if (program) gl.deleteProgram(program);
+          if (vert) gl.deleteShader(vert);
+          if (frag) gl.deleteShader(frag);
+          const loseContext = gl.getExtension("WEBGL_lose_context");
+          if (loseContext) {
+            loseContext.loseContext();
+          }
+        }
       }
     };
   }, []);
