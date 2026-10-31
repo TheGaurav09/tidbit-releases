@@ -44,7 +44,9 @@ uniform vec3 u_cloud;
 uniform vec3 u_skyTop;
 uniform vec3 u_skyBottom;
 
-const mat2 R = mat2(0.80, 0.60, -0.60, 0.80);
+vec2 rot(vec2 p) {
+  return vec2(p.x * 0.80 + p.y * 0.60, -p.x * 0.60 + p.y * 0.80);
+}
 
 float hash(vec2 p) {
   return fract(sin(dot(p, vec2(41.31, 289.17))) * 26737.367);
@@ -66,7 +68,7 @@ float fbm(vec2 p) {
   float amp = 0.5;
   for (int i = 0; i < 4; i++) {
     sum += amp * vnoise(p);
-    p = R * p * 2.03 + 19.19;
+    p = rot(p * 2.03) + 19.19;
     amp *= 0.5;
   }
   return sum;
@@ -78,7 +80,7 @@ float billow(vec2 p) {
   float amp = 0.5;
   for (int i = 0; i < 5; i++) {
     sum += amp * (1.0 - abs(2.0 * vnoise(p) - 1.0));
-    p = R * p * 2.11 + 13.37;
+    p = rot(p * 2.11) + 13.37;
     amp *= 0.5;
   }
   return sum;
