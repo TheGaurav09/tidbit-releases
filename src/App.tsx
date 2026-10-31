@@ -9,21 +9,23 @@ import { Footer } from "./components/Footer";
 import { Modals } from "./components/Modals";
 import { PrivacyPolicy } from "./components/legal/PrivacyPolicy";
 import { TermsOfService } from "./components/legal/TermsOfService";
+import { Changelog } from "./components/legal/Changelog";
 import CloudShaderDemo from "./components/cloud-shader-demo";
 import MovingBorderDemo from "./components/moving-border-demo";
 
-function getInitialRoute(): "home" | "privacy" | "terms" | "cloud-demo" | "border-demo" {
+function getInitialRoute(): "home" | "privacy" | "terms" | "changelog" | "cloud-demo" | "border-demo" {
   const path = window.location.pathname.toLowerCase();
   const hash = window.location.hash.toLowerCase();
   if (path.includes("privacy") || hash.includes("privacy")) return "privacy";
   if (path.includes("terms") || hash.includes("terms")) return "terms";
+  if (path.includes("changelog") || hash.includes("changelog")) return "changelog";
   if (path.includes("cloud") || hash.includes("cloud")) return "cloud-demo";
   if (path.includes("border") || hash.includes("border")) return "border-demo";
   return "home";
 }
 
 export default function App() {
-  const [route, setRoute] = useState<"home" | "privacy" | "terms" | "cloud-demo" | "border-demo">(getInitialRoute);
+  const [route, setRoute] = useState<"home" | "privacy" | "terms" | "changelog" | "cloud-demo" | "border-demo">(getInitialRoute);
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
   const [isQrOpen, setIsQrOpen] = useState(false);
 
@@ -42,6 +44,9 @@ export default function App() {
         window.scrollTo(0, 0);
       } else if (path.includes("terms") || hash.includes("terms")) {
         setRoute("terms");
+        window.scrollTo(0, 0);
+      } else if (path.includes("changelog") || hash.includes("changelog")) {
+        setRoute("changelog");
         window.scrollTo(0, 0);
       } else if (path.includes("cloud") || hash.includes("cloud")) {
         setRoute("cloud-demo");
@@ -64,7 +69,7 @@ export default function App() {
 
   const navigateTo = (path: string) => {
     if (path === "/" || path === "") {
-      const cleanPath = window.location.pathname.replace(/\/privacy\/?|\/terms\/?|\/cloud.*|\/border.*/i, "");
+      const cleanPath = window.location.pathname.replace(/\/privacy\/?|\/terms\/?|\/changelog\/?|\/cloud.*|\/border.*/i, "");
       window.history.pushState(null, "", cleanPath || window.location.pathname);
       if (window.location.hash) {
         window.history.replaceState(null, "", cleanPath || window.location.pathname);
@@ -82,6 +87,9 @@ export default function App() {
     } else if (target.includes("terms")) {
       setRoute("terms");
       window.scrollTo(0, 0);
+    } else if (target.includes("changelog")) {
+      setRoute("changelog");
+      window.scrollTo(0, 0);
     } else if (target.includes("cloud")) {
       setRoute("cloud-demo");
       window.scrollTo(0, 0);
@@ -94,13 +102,17 @@ export default function App() {
     }
   };
 
-  // Dedicated Clean Legal Views (Clean URLs: /privacy, /terms)
+  // Dedicated Clean Legal Views (Clean URLs: /privacy, /terms, /changelog)
   if (route === "privacy") {
     return <PrivacyPolicy onBackToHome={() => navigateTo("/")} />;
   }
 
   if (route === "terms") {
     return <TermsOfService onBackToHome={() => navigateTo("/")} />;
+  }
+
+  if (route === "changelog") {
+    return <Changelog onBackToHome={() => navigateTo("/")} />;
   }
 
   // Standalone Aceternity UI Cloud Shader Demo

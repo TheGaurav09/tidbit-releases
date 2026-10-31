@@ -124,7 +124,14 @@ export function LegalLayout({
       </main>
 
       {/* Clean Bottom Legal Footer */}
-      <footer className="border-t border-neutral-200/80 py-8 px-4 mt-16 bg-white text-xs text-neutral-500 text-center">
+      <footer className="border-t border-neutral-200/80 py-8 px-4 mt-16 bg-white text-xs text-neutral-500 text-center space-y-2">
+        <div className="flex items-center justify-center gap-4 text-[11px] text-neutral-500">
+          <a href="#privacy" className="hover:text-neutral-900 transition-colors">Privacy Policy</a>
+          <span>·</span>
+          <a href="#terms" className="hover:text-neutral-900 transition-colors">Terms of Service</a>
+          <span>·</span>
+          <a href="#changelog" className="hover:text-neutral-900 transition-colors">Changelog</a>
+        </div>
         <p>© 2026 Tidbit · All rights reserved.</p>
       </footer>
     </div>

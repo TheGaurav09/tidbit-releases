@@ -75,6 +75,13 @@ export function Footer({ onNavigate }: FooterProps) {
               >
                 Release Details
               </a>
+              <a
+                href="#changelog"
+                onClick={(e) => handleLegalClick(e, "#changelog")}
+                className="hover:text-neutral-900 transition-colors cursor-pointer"
+              >
+                Changelog
+              </a>
             </div>
 
             <div className="flex flex-col gap-2">
@@ -94,6 +101,13 @@ export function Footer({ onNavigate }: FooterProps) {
                 className="hover:text-neutral-900 transition-colors cursor-pointer"
               >
                 Terms of Service
+              </a>
+              <a
+                href="#changelog"
+                onClick={(e) => handleLegalClick(e, "#changelog")}
+                className="hover:text-neutral-900 transition-colors cursor-pointer"
+              >
+                Release Changelog
               </a>
             </div>
           </div>
