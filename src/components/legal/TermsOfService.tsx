@@ -83,13 +83,13 @@ export function TermsOfService({ onBackToHome }: TermsOfServiceProps) {
       {/* 3. Eligibility & Account Security */}
       <section id="eligibility" className="scroll-mt-24 space-y-3">
         <h2 className="text-base sm:text-lg font-bold text-neutral-900 font-display">
-          3. Eligibility & Account Security
+          3. Eligibility, Account Security & Device Integrity
         </h2>
         <p className="text-xs sm:text-[13px] leading-relaxed text-neutral-700">
-          You must be at least 13 years of age (or 16 years of age in the European Economic Area or UK) to use TidBit. If you are under the legal age of majority in your jurisdiction, you represent that you have reviewed these Terms with your parent or legal guardian and obtained their consent.
+          You must be at least 13 years of age (or 16 years of age in the European Economic Area or UK) to register an account on TidBit. If you are between 13 and 17 years of age, you represent that you have reviewed these Terms with your parent or legal guardian and obtained their consent. Users identified as minors have specialized privacy safeguards applied automatically.
         </p>
         <p className="text-xs sm:text-[13px] leading-relaxed text-neutral-700">
-          You are responsible for safeguarding your login credentials and for all activities conducted through your account. You agree to notify us promptly of any unauthorized access or security incident.
+          You are responsible for safeguarding your login credentials. To protect accounts against credential stuffing, automated bots, and unauthorized takeovers, TidBit records connected device specifications (model, manufacturer, OS version, and network IP) across user sessions. Changes to your display name, username, or profile avatar are logged into an audit trail for community safety and dispute resolution.
         </p>
       </section>
 
@@ -215,10 +215,27 @@ export function TermsOfService({ onBackToHome }: TermsOfServiceProps) {
       {/* 12. Termination & Account Deletion */}
       <section id="termination" className="scroll-mt-24 space-y-3">
         <h2 className="text-base sm:text-lg font-bold text-neutral-900 font-display">
-          12. Termination & Account Deletion
+          12. Termination & Account Deletion (30-Day Grace Period)
         </h2>
         <p className="text-xs sm:text-[13px] leading-relaxed text-neutral-700">
-          You may terminate your account at any time through the in-app profile settings. We reserve the right to suspend or terminate accounts that breach these Terms, engage in abuse, or threaten platform security.
+          You may request account deletion at any time via Settings &rarr; Delete Account. Upon initiating this request:
+        </p>
+        <ul className="space-y-2 text-xs sm:text-[13px] text-neutral-700">
+          <li className="flex items-start gap-2.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0" />
+            <span>Your account enters a <strong>30-day grace period</strong> and your profile is immediately hidden from public searches and community feeds.</span>
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0" />
+            <span>You may cancel the deletion request at any point during these 30 days simply by signing back into your account.</span>
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0" />
+            <span>Upon the expiration of the 30-day grace period, all personal identifiers, posts, comments, collections, and media assets are permanently and irrevocably purged from production databases.</span>
+          </li>
+        </ul>
+        <p className="text-xs sm:text-[13px] leading-relaxed text-neutral-700 pt-1">
+          We reserve the right to suspend or terminate accounts that breach these Terms, distribute prohibited content, or threaten platform security.
         </p>
       </section>
 
@@ -245,7 +262,7 @@ export function TermsOfService({ onBackToHome }: TermsOfServiceProps) {
           For legal inquiries, copyright notices, or questions regarding these Terms, contact our legal counsel:
         </p>
         <p className="text-xs sm:text-[13px] text-neutral-800 font-medium pt-1">
-          Email: <span className="underline">legal@tidbit.app</span>
+          Email: <a href="mailto:connect.tidbit@gmail.com" className="underline hover:text-black">connect.tidbit@gmail.com</a>
         </p>
       </section>
     </LegalLayout>

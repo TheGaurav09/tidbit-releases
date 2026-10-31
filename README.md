@@ -80,4 +80,4 @@ Every push to the `main` branch automatically triggers the `.github/workflows/de
 - **Hardware-Backed Encryption**: High-security keystore credential handling.
 - **Open Integrity**: Every release binary is cryptographically signed and checksummed in public releases.
 
-© 2026 TidBit Ecosystem · Built with Focus
+© 2026 Tidbit · Built with Focus

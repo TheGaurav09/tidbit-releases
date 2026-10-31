@@ -35,13 +35,9 @@ export function FAQ() {
   const toggleFAQ = (idx: number) => {
     setOpenIndex((current) => (current === idx ? null : idx));
   };
-
   return (
     <section className="py-16 md:py-24 px-4 max-w-3xl mx-auto" id="faq">
       <div className="text-center mb-12">
-        <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
-          Everything You Need to Know
-        </span>
         <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900 mt-2 font-display">
           Frequently Asked Questions
         </h2>
@@ -50,7 +46,7 @@ export function FAQ() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-3.5">
+      <div className="flex flex-col gap-2.5">
         {faqs.map((faq, idx) => {
           const isOpen = openIndex === idx;
           return (
@@ -58,8 +54,8 @@ export function FAQ() {
               key={idx}
               className={`rounded-2xl border transition-all duration-300 overflow-hidden bg-white ${
                 isOpen
-                  ? "border-blue-500/40 shadow-[0_8px_24px_rgba(36,87,214,0.06)] ring-1 ring-blue-500/20"
-                  : "border-black/[0.08] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:border-black/[0.14] hover:shadow-[0_4px_16px_rgba(0,0,0,0.04)]"
+                  ? "border-black/[0.12] shadow-[0_4px_20px_rgba(0,0,0,0.04)]"
+                  : "border-black/[0.07] shadow-[0_1px_4px_rgba(0,0,0,0.02)] hover:border-black/[0.12] hover:shadow-[0_2px_8px_rgba(0,0,0,0.03)]"
               }`}
             >
               <button
@@ -70,31 +66,6 @@ export function FAQ() {
                 <span className="text-base sm:text-lg font-semibold text-neutral-900 tracking-tight leading-snug">
                   {faq.q}
                 </span>
-
-                {/* Elegant Animated Plus/Close Icon */}
-                <div
-                  className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors duration-200 ${
-                    isOpen
-                      ? "bg-blue-600 text-white"
-                      : "bg-neutral-100 text-neutral-500 group-hover:bg-blue-50 group-hover:text-blue-600"
-                  }`}
-                >
-                  <motion.svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    animate={{ rotate: isOpen ? 45 : 0 }}
-                    transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                  >
-                    <line x1="12" y1="5" x2="12" y2="19" />
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                  </motion.svg>
-                </div>
               </button>
 
               {/* Smooth Height and Opacity Transition */}

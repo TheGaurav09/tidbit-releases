@@ -17,14 +17,14 @@ export function Hero({
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#4C87C5]">
-      {/* Crisp, bright Aceternity Cloud Shader with #4C87C5 background to match initial shader render */}
+    <section className="relative w-full overflow-hidden bg-[#183761] bg-gradient-to-b from-[#183761] via-[#224f88] to-[#2d6cb5]">
+      {/* Resilient Aceternity Cloud Shader with robust dark bluish sky palette */}
       <CloudShader
-        className="w-full pt-28 pb-24 md:pt-36 md:pb-36 bg-[#4C87C5]"
+        className="w-full pt-28 pb-24 md:pt-36 md:pb-36"
         speed={1}
         count={6}
-        skyTopColor="#3876ba"
-        skyBottomColor="#8cbfe8"
+        skyTopColor="#183761"
+        skyBottomColor="#2d6cb5"
         cloudColor="#ffffff"
       >
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
@@ -52,7 +52,6 @@ export function Hero({
               onClick={handleDownloadClick}
               borderRadius="9999px"
               containerClassName="h-12 w-auto shadow-xl"
-              borderClassName="bg-[radial-gradient(circle_at_center,#60A5FA_20%,#2457D6_55%,transparent_75%)]"
               className="bg-neutral-900 hover:bg-neutral-800 text-white font-semibold text-sm md:text-base px-6 gap-2.5 cursor-pointer transition-colors"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -65,14 +64,14 @@ export function Hero({
 
             <button
               onClick={onOpenWaitlist}
-              className="h-12 px-6 rounded-full bg-white/95 hover:bg-white border border-white text-neutral-900 text-sm md:text-base font-semibold transition-all shadow-md cursor-pointer hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center"
+              className="h-10 px-5 rounded-full bg-white/95 hover:bg-white border border-white text-neutral-900 text-sm md:text-base font-semibold transition-all shadow-md cursor-pointer hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center"
             >
               Play Store Waitlist
             </button>
 
             <button
               onClick={onOpenQr}
-              className="h-12 px-5 rounded-full bg-white/90 hover:bg-white border border-white/80 text-neutral-800 text-sm md:text-base font-medium transition-all cursor-pointer flex items-center justify-center gap-2 shadow-sm hover:scale-[1.02] active:scale-[0.98]"
+              className="h-10 px-5 rounded-full bg-white/90 hover:bg-white border border-white/80 text-neutral-800 text-sm md:text-base font-medium transition-all cursor-pointer flex items-center justify-center gap-2 shadow-sm hover:scale-[1.02] active:scale-[0.98]"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect width="5" height="5" x="3" y="3" rx="1" />
@@ -104,8 +103,8 @@ export function Hero({
         </div>
       </CloudShader>
 
-      {/* Seamless transition merging Cloud Shader bottom into Integrated Learning Ecosystem section */}
-      <div className="absolute inset-x-0 bottom-0 h-28 md:h-36 bg-gradient-to-b from-transparent via-[var(--color-canvas)]/50 to-[var(--color-canvas)] pointer-events-none z-10" />
+      {/* Subtle bottom transition blending into showcase section */}
+      <div className="absolute inset-x-0 bottom-0 h-16 md:h-24 bg-gradient-to-b from-transparent to-[var(--color-canvas)] pointer-events-none z-10" />
     </section>
   );
 }

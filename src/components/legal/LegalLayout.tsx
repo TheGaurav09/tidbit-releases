@@ -103,11 +103,10 @@ export function LegalLayout({
                     key={section.id}
                     href={`#${section.id}`}
                     onClick={(e) => scrollToSection(e, section.id)}
-                    className={`py-1.5 pl-3 transition-colors leading-snug truncate ${
-                      isActive
-                        ? "text-neutral-900 font-bold border-l-2 border-neutral-900 -ml-[1px]"
-                        : "text-neutral-500 hover:text-neutral-900"
-                    }`}
+                    className={`py-1.5 pl-3 transition-colors leading-snug truncate ${isActive
+                      ? "text-neutral-900 font-bold border-l-2 border-neutral-900 -ml-[1px]"
+                      : "text-neutral-500 hover:text-neutral-900"
+                      }`}
                     title={section.title}
                   >
                     {section.title}
@@ -126,7 +125,7 @@ export function LegalLayout({
 
       {/* Clean Bottom Legal Footer */}
       <footer className="border-t border-neutral-200/80 py-8 px-4 mt-16 bg-white text-xs text-neutral-500 text-center">
-        <p>© 2026 TidBit Ecosystem · Zero Ad Trackers · All rights reserved.</p>
+        <p>© 2026 Tidbit · All rights reserved.</p>
       </footer>
     </div>
   );

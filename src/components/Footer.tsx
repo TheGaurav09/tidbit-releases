@@ -95,21 +95,13 @@ export function Footer({ onNavigate }: FooterProps) {
               >
                 Terms of Service
               </a>
-              <a
-                href={APP_CONFIG.githubRepoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-neutral-900 transition-colors"
-              >
-                GitHub Repository
-              </a>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-black/[0.06] pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-neutral-500">
-          <div>© 2026 TidBit Ecosystem. All rights reserved.</div>
+          <div>© 2026 Tidbit. All rights reserved.</div>
         </div>
       </div>
     </footer>

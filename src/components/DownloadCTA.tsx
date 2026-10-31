@@ -16,9 +16,6 @@ export function DownloadCTA({
   return (
     <section className="py-16 md:py-24 px-4 max-w-4xl mx-auto" id="download">
       <div className="rounded-3xl p-6 sm:p-12 text-center bg-white border border-black/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.04)] flex flex-col items-center">
-        <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
-          Ready to Learn
-        </span>
         <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900 mt-2 mb-3 font-display">
           Start Your Distraction-Free Journey
         </h2>
@@ -33,7 +30,6 @@ export function DownloadCTA({
             onClick={handleDownloadClick}
             borderRadius="9999px"
             containerClassName="h-12 w-auto shadow-md"
-            borderClassName="bg-[radial-gradient(circle_at_center,#60A5FA_20%,#2457D6_55%,transparent_75%)]"
             className="bg-neutral-900 hover:bg-neutral-800 text-white text-sm md:text-base font-semibold flex items-center gap-2.5 px-6 cursor-pointer transition-colors"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">

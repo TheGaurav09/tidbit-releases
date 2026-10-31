@@ -42,7 +42,6 @@ export function Header({
             onClick={handleGetAppClick}
             borderRadius="9999px"
             containerClassName="h-9 w-auto shadow-xs"
-            borderClassName="bg-[radial-gradient(circle_at_center,#60A5FA_20%,#2457D6_55%,transparent_75%)]"
             className="bg-neutral-900 hover:bg-neutral-800 text-white font-semibold text-xs md:text-sm px-4 gap-2 cursor-pointer transition-colors"
           >
             <span>Get App</span>

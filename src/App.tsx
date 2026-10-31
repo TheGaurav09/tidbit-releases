@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { TabsShowcase } from "./components/TabsShowcase";
-import { FeatureCards } from "./components/FeatureCards";
+import { LearnCarousel } from "./components/LearnCarousel";
 import { FAQ } from "./components/FAQ";
 import { DownloadCTA } from "./components/DownloadCTA";
 import { Footer } from "./components/Footer";
@@ -157,9 +157,6 @@ export default function App() {
         {/* Aceternity UI Tabs Showcase Section with Phone Mockup */}
         <section className="py-12 md:py-20 px-4" id="showcase">
           <div className="text-center mb-10 md:mb-14 max-w-2xl mx-auto">
-            <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
-              Integrated Learning Ecosystem
-            </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900 mt-2 font-display">
               Five Disciplines. One Connected Mind.
             </h2>
@@ -171,21 +168,18 @@ export default function App() {
           <TabsShowcase />
         </section>
 
-        {/* Feature Cards Grid (Desktop) & Swipeable Carousel (Mobile) */}
-        <section className="py-14 md:py-20 px-4 bg-neutral-50/50 border-y border-black/[0.04]" id="features">
-          <div className="text-center mb-10 md:mb-14 max-w-2xl mx-auto">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-600">
-              Built For Focus
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-900 mt-2 font-display">
-              Every Feature Built for Real Retention
+        {/* Feature Carousel from Learn Carousel */}
+        <section className="py-12 md:py-16 px-0 sm:px-4 bg-neutral-50/50 border-y border-black/[0.04] overflow-hidden" id="features">
+          <div className="text-center mb-6 md:mb-8 max-w-xl mx-auto px-4">
+            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900 font-display">
+              Built for Real Retention
             </h2>
-            <p className="text-sm sm:text-base text-neutral-600 mt-3 leading-relaxed">
-              Engineered from first principles to replace mindless algorithmic feeds with calm, deliberate, compounding knowledge.
+            <p className="text-xs sm:text-sm text-neutral-600 mt-2 leading-relaxed">
+              Calm, deliberate tools engineered for compounding knowledge without dopamine loops.
             </p>
           </div>
 
-          <FeatureCards />
+          <LearnCarousel />
         </section>
 
         {/* FAQ Section */}

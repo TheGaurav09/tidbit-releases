@@ -1,25 +1,8 @@
 "use client";
 import React from "react";
-import {
-  motion,
-  useAnimationFrame,
-  useMotionTemplate,
-  useMotionValue,
-  useTransform,
-} from "motion/react";
-import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
-export function Button({
-  borderRadius = "1.75rem",
-  children,
-  as: Component = "button",
-  containerClassName,
-  borderClassName,
-  duration,
-  className,
-  ...otherProps
-}: {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   borderRadius?: string;
   children: React.ReactNode;
   as?: any;
@@ -28,40 +11,55 @@ export function Button({
   duration?: number;
   className?: string;
   [key: string]: any;
-}) {
-  // Use optimal pill radii for rounded-full buttons so the path follows the exact cap
-  const isPill = borderRadius === "9999px" || borderRadius === "full";
-  const rx = otherProps.rx || (isPill ? "24px" : "30%");
-  const ry = otherProps.ry || (isPill ? "24px" : "30%");
+}
 
+export function Button({
+  borderRadius = "9999px",
+  children,
+  as: Component = "button",
+  containerClassName,
+  borderClassName,
+  duration = 3400,
+  className,
+  ...otherProps
+}: ButtonProps) {
   return (
     <Component
       className={cn(
-        "relative h-16 w-40 overflow-hidden bg-transparent p-[1.5px] text-xl",
+        "relative inline-flex items-center justify-center overflow-hidden p-[1.5px] select-none group",
         containerClassName,
       )}
       style={{
-        borderRadius: borderRadius,
+        borderRadius,
       }}
       {...otherProps}
     >
-      <div
-        className="absolute inset-0"
-        style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
-      >
-        <MovingBorder duration={duration} rx={rx} ry={ry}>
-          <div
-            className={cn(
-              "h-24 w-24 bg-[radial-gradient(circle_at_center,#60A5FA_15%,#2457D6_50%,transparent_75%)] opacity-[0.95]",
-              borderClassName,
-            )}
-          />
-        </MovingBorder>
-      </div>
-
+      {/* Sleek Perimeter Border Beam - Single continuous shooting beam along the edge */}
       <div
         className={cn(
-          "relative flex h-full w-full items-center justify-center border border-slate-800 bg-slate-900/[0.8] text-sm text-white antialiased backdrop-blur-xl",
+          "pointer-events-none absolute -inset-[250%] animate-spin",
+          borderClassName,
+        )}
+        style={{
+          animationDuration: `${duration}ms`,
+          animationTimingFunction: "linear",
+          background:
+            "conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 250deg, #93C5FD 295deg, #3B82F6 335deg, #1D4ED8 355deg, transparent 360deg)",
+        }}
+      />
+
+      {/* Subtle crisp base border ring */}
+      <div
+        className="pointer-events-none absolute inset-0 border border-white/[0.14]"
+        style={{
+          borderRadius,
+        }}
+      />
+
+      {/* Inner Button Content */}
+      <div
+        className={cn(
+          "relative z-10 flex h-full w-full items-center justify-center bg-neutral-900 text-sm text-white antialiased transition-colors",
           className,
         )}
         style={{
@@ -74,71 +72,13 @@ export function Button({
   );
 }
 
+// Backward compatibility helper
 export const MovingBorder = ({
   children,
   duration = 3000,
   rx,
   ry,
   ...otherProps
-}: {
-  children: React.ReactNode;
-  duration?: number;
-  rx?: string;
-  ry?: string;
-  [key: string]: any;
-}) => {
-  const pathRef = useRef<any>(null);
-  const progress = useMotionValue<number>(0);
-
-  useAnimationFrame((time) => {
-    const length = pathRef.current?.getTotalLength();
-    if (length) {
-      const pxPerMillisecond = length / duration;
-      progress.set((time * pxPerMillisecond) % length);
-    }
-  });
-
-  const x = useTransform(
-    progress,
-    (val) => pathRef.current?.getPointAtLength(val).x,
-  );
-  const y = useTransform(
-    progress,
-    (val) => pathRef.current?.getPointAtLength(val).y,
-  );
-
-  const transform = useMotionTemplate`translateX(${x}px) translateY(${y}px) translateX(-50%) translateY(-50%)`;
-
-  return (
-    <>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
-        className="absolute h-full w-full"
-        width="100%"
-        height="100%"
-        {...otherProps}
-      >
-        <rect
-          fill="none"
-          width="100%"
-          height="100%"
-          rx={rx}
-          ry={ry}
-          ref={pathRef}
-        />
-      </svg>
-      <motion.div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          display: "inline-block",
-          transform,
-        }}
-      >
-        {children}
-      </motion.div>
-    </>
-  );
+}: any) => {
+  return children;
 };

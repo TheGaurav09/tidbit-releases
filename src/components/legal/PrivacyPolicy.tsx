@@ -58,20 +58,28 @@ export function PrivacyPolicy({ onBackToHome }: PrivacyPolicyProps) {
           2. Information We Collect
         </h2>
         <p className="text-xs sm:text-[13px] leading-relaxed text-neutral-700">
-          We collect only the minimum information necessary to maintain account security and synchronize study progress:
+          We collect and securely store data strictly necessary to authenticate your account, safeguard our infrastructure from fraud, and synchronize your educational experience:
         </p>
-        <ul className="space-y-2 text-xs sm:text-[13px] text-neutral-700">
+        <ul className="space-y-2.5 text-xs sm:text-[13px] text-neutral-700">
           <li className="flex items-start gap-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0" />
-            <span><strong>Account Credentials:</strong> If you register an account, we store your email address, username, and cryptographic password hash (or OAuth federation identifiers from Google).</span>
+            <span><strong>Core Identity & Credentials:</strong> Unique randomized user UUID, email address, display name, username, profile biography, date of birth, and salted password hashes (Argon2/bcrypt) managed via Supabase Auth. Plaintext passwords are never received or stored.</span>
           </li>
           <li className="flex items-start gap-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0" />
-            <span><strong>Learning Telemetry:</strong> Anonymized lesson completion counters, daily game streak tallies, and quiz results used to tailor curriculum difficulty.</span>
+            <span><strong>Device & Technical Telemetry:</strong> Device model, hardware manufacturer, brand, Android OS version, SDK level, system language, time zone, IP address, app build version, and an anonymous device installation fingerprint. When you sign in from a new device, device specifications are preserved in a multi-device dictionary to detect unauthorized logins and account takeover attempts.</span>
           </li>
           <li className="flex items-start gap-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0" />
-            <span><strong>Device Diagnostics:</strong> Android version, hardware architecture (ARM64/x86_64), and crash stack traces necessary to verify compatibility and squash bugs.</span>
+            <span><strong>Account Change History:</strong> Historical records of all previous display names, usernames, and profile avatar image URLs associated with your account, maintained for identity verification and community safety.</span>
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0" />
+            <span><strong>Behavioral Lifetime Metrics:</strong> Internal cumulative activity tallies including total posts created, posts deleted, bookmarks added, bookmarks removed, comments posted/deleted, likes, shares, and session login counts. This data is utilized solely for internal service optimization, feed reliability, and platform analytics; it is never sold or displayed publicly.</span>
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0" />
+            <span><strong>Security Logs & Consents:</strong> Timestamped records of authentication events, IP addresses, session verifications, push notification tokens, and legal consent agreements (Terms of Service, Privacy Policy version approvals).</span>
           </li>
         </ul>
       </section>
@@ -196,26 +204,30 @@ export function PrivacyPolicy({ onBackToHome }: PrivacyPolicyProps) {
 
       <hr className="border-neutral-200/80 my-6" />
 
-      {/* 9. Privacy Rights (GDPR & CCPA) */}
+      {/* 9. Privacy Rights (GDPR & CCPA & India DPDP) */}
       <section id="rights" className="scroll-mt-24 space-y-3">
         <h2 className="text-base sm:text-lg font-bold text-neutral-900 font-display">
-          9. Your Privacy Rights (GDPR & CCPA)
+          9. Your Privacy Rights (GDPR, CCPA & India DPDP)
         </h2>
         <p className="text-xs sm:text-[13px] leading-relaxed text-neutral-700">
-          Regardless of your geography, TidBit grants all users comprehensive data sovereignty:
+          Regardless of your jurisdiction, TidBit provides complete user data sovereignty and self-service compliance tools directly within your mobile application:
         </p>
-        <ul className="space-y-2 text-xs sm:text-[13px] text-neutral-700">
+        <ul className="space-y-2.5 text-xs sm:text-[13px] text-neutral-700">
           <li className="flex items-start gap-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0" />
-            <span><strong>Right to Access & Portability:</strong> Export a machine-readable JSON copy of your study notes and progress logs.</span>
+            <span><strong>Right to Access & Data Portability:</strong> You can export a comprehensive machine-readable JSON archive of your personal profile, posts, comments, bookmarks, device history, privacy preferences, and legal consents directly via Settings &rarr; Export My Data.</span>
           </li>
           <li className="flex items-start gap-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0" />
-            <span><strong>Right to Rectification:</strong> Update inaccurate account details anytime via profile settings.</span>
+            <span><strong>Right to Rectification:</strong> You can modify your display name, username, bio, avatar, and date of birth at any time in Edit Profile.</span>
           </li>
           <li className="flex items-start gap-2.5">
             <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0" />
-            <span><strong>Right to Erasure ("To Be Forgotten"):</strong> Delete your account and all associated cloud records with one click.</span>
+            <span><strong>Right to Erasure ("To Be Forgotten"):</strong> You can request immediate account deletion from the app. An automated confirmation and compliance alert is dispatched, entering your account into a 30-day grace period. If not cancelled, your identity, media, and records are irrevocably purged.</span>
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0" />
+            <span><strong>Right to Restrict Processing & Consent Management:</strong> You can adjust social visibility (Public, Followers Only, Private), toggle push notifications, and withdraw optional diagnostics consent at any time.</span>
           </li>
         </ul>
       </section>
@@ -225,11 +237,25 @@ export function PrivacyPolicy({ onBackToHome }: PrivacyPolicyProps) {
       {/* 10. Data Retention & Erasure */}
       <section id="retention" className="scroll-mt-24 space-y-3">
         <h2 className="text-base sm:text-lg font-bold text-neutral-900 font-display">
-          10. Data Retention & Erasure
+          10. Data Retention Schedules & Scheduled Cleanups
         </h2>
         <p className="text-xs sm:text-[13px] leading-relaxed text-neutral-700">
-          We retain active account data only for as long as your account remains open. When you initiate account deletion from the app, all personal identifiers and database records are permanently purged from production databases within 30 days.
+          We adhere to strict data minimization principles and operate automated server-side cleanup routines:
         </p>
+        <ul className="space-y-2.5 text-xs sm:text-[13px] text-neutral-700">
+          <li className="flex items-start gap-2.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0" />
+            <span><strong>Security Logs:</strong> Authentication logs, IP history, and device access telemetry are retained for <strong>90 days</strong> for fraud detection, after which they are automatically purged.</span>
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0" />
+            <span><strong>Engagement & Interaction Telemetry:</strong> Video completion telemetry and feed engagement events are retained for <strong>180 days</strong> to train recommendation algorithms and are then permanently deleted.</span>
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0" />
+            <span><strong>Account Deletion Grace Period:</strong> When you request account deletion, the account is marked pending deletion for a <strong>30-day grace period</strong>. Logging back in during this period restores the account; once 30 days lapse, all account data is permanently and irrevocably wiped.</span>
+          </li>
+        </ul>
       </section>
 
       <hr className="border-neutral-200/80 my-6" />
@@ -237,11 +263,25 @@ export function PrivacyPolicy({ onBackToHome }: PrivacyPolicyProps) {
       {/* 11. Security Safeguards */}
       <section id="security" className="scroll-mt-24 space-y-3">
         <h2 className="text-base sm:text-lg font-bold text-neutral-900 font-display">
-          11. Security Safeguards
+          11. Security Safeguards & Isolation Standards
         </h2>
         <p className="text-xs sm:text-[13px] leading-relaxed text-neutral-700">
-          We implement rigorous security controls including AES-256 encryption at rest, TLS 1.3 transport encryption, Row-Level Security (RLS) on cloud databases, automated vulnerability scanning, and strict role-based access controls (RBAC).
+          We implement defense-in-depth security standards to protect user records:
         </p>
+        <ul className="space-y-2.5 text-xs sm:text-[13px] text-neutral-700">
+          <li className="flex items-start gap-2.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0" />
+            <span><strong>Database Row-Level Security (RLS):</strong> Our database layer strictly enforces PostgreSQL Row Level Security. All anonymous access to user info is revoked. Authenticated users can only read or update their own personal record. Under no circumstance can another user query or access your device specifications or IP address.</span>
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0" />
+            <span><strong>Cryptographic Safeguards:</strong> High-entropy salted password hashing (Argon2/bcrypt), AES-256 disk encryption at rest, TLS 1.3 transport encryption, and Android Keystore backed storage on client devices.</span>
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0" />
+            <span><strong>Tamper-Proof Tracking:</strong> Behavioral metric counters (e.g., posts created/deleted, bookmarks added/deleted) are governed entirely by atomic server-side database triggers that cannot be forged by client code.</span>
+          </li>
+        </ul>
       </section>
 
       <hr className="border-neutral-200/80 my-6" />
@@ -267,7 +307,7 @@ export function PrivacyPolicy({ onBackToHome }: PrivacyPolicyProps) {
           For privacy inquiries, data subject access requests (DSAR), or questions regarding our information practices, contact our Data Protection Officer:
         </p>
         <p className="text-xs sm:text-[13px] text-neutral-800 font-medium pt-1">
-          Email: <span className="underline">privacy@tidbit.app</span>
+          Email: <a href="mailto:connect.tidbit@gmail.com" className="underline hover:text-black">connect.tidbit@gmail.com</a>
         </p>
       </section>
     </LegalLayout>
